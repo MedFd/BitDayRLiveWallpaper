@@ -1,0 +1,57 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.medfd.bitdayrlivewallpaper"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="21" />
+    
+    <!-- the app can be installed only on devices that can run live wallpapers -->
+    <uses-feature
+    	android:name="android.software.live_wallpaper"
+    	android:required="true" >
+	</uses-feature>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        
+        <!-- Wallpaper Service -->
+        <service
+            android:name=".BitDayR_Service"
+            android:label="@string/lwp_name"
+            android:permission="android.permission.BIND_WALLPAPER" >
+            <intent-filter>
+                <action android:name="android.service.wallpaper.WallpaperService" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.service.wallpaper"
+                android:resource="@xml/bit_day_r_wallpaper" />
+        </service>
+
+        <!-- Wallpaper Settings -->
+        <activity
+            android:name=".Settings"
+            android:exported="true"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <category android:name="android.intent.category.PREFERENCE" />
+            </intent-filter>
+        </activity>        
+        
+        <!-- Wallpaper Preview -->
+        <activity
+            android:name=".Preview"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>        
+    </application>
+
+</manifest>

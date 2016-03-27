@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<wallpaper 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:author="@string/app_author"
+    android:description="@string/app_desc"   
+     />
+
+    
+<!-- 
+<wallpaper 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:author="@string/bdr_author"
+    android:description="@string/bdr_desc"
+    android:settingsActivity="com.medfd.bitdayrlivewallpaper.Settings"
+    android:thumbnail="@drawable/thumbnail" />
+ -->
